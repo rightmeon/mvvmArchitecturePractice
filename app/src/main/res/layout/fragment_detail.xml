@@ -6,10 +6,10 @@
     <data>
         <variable
             name="item"
-            type="com.example.mvvmpj.repository.Item"/>
+            type="com.example.mvvmpj.data.model.Item"/>
         <variable
             name="detailfragment"
-            type="com.example.mvvmpj.view.DetailFragment" />
+            type="com.example.mvvmpj.presentation.view.fragment.DetailFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

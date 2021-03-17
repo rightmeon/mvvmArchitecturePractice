@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.mvvmpj.repository.Item"/>
+            type="com.example.mvvmpj.data.model.Item"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

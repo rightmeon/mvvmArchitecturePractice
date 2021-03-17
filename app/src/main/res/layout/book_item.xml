@@ -6,10 +6,10 @@
     <data>
         <variable
             name="item"
-            type="com.example.mvvmpj.repository.Item"/>
+            type="com.example.mvvmpj.data.model.Item"/>
         <variable
             name="adapter"
-            type="com.example.mvvmpj.adapter.BookAdapter"/>
+            type="com.example.mvvmpj.presentation.adapters.BookAdapter"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

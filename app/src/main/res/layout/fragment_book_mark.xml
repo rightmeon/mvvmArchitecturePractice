@@ -5,7 +5,7 @@
     <data>
         <variable
             name="bookmarkviewmodel"
-            type="com.example.mvvmpj.viewModel.BookMarkViewModel"/>
+            type="com.example.mvvmpj.presentation.viewmodel.BookMarkViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

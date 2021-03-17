@@ -6,16 +6,16 @@
     <data>
         <variable
             name="fragment"
-            type="com.example.mvvmpj.view.ListFragment"/>
+            type="com.example.mvvmpj.presentation.view.fragment.ListFragment"/>
         <variable
             name="viewmodel"
-            type="com.example.mvvmpj.viewModel.BookViewModel" />
+            type="com.example.mvvmpj.presentation.viewmodel.BookViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.MainActivity">
+        tools:context=".presentation.view.activity.MainActivity">
 
         <EditText
             android:id="@+id/edit_writer"
