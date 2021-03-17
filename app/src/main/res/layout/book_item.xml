@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item"
+            type="com.example.mvvmpj.repository.Item"/>
+        <variable
+            name="adapter"
+            type="com.example.mvvmpj.adapter.BookAdapter"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="@{() -> adapter.onItemClick(item)}">
+
+        <ImageView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/book_title"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            android:id="@+id/book_image"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            app:loadImage="@{item.image}"
+            tool:src="@drawable/base_book_image_36" />
+
+        <TextView
+            app:layout_constraintLeft_toRightOf="@id/book_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/book_author"
+            android:id="@+id/book_title"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:br_text="@{item.title}"
+            android:textSize="10dp"
+            tool:text="제목" />
+
+        <TextView
+            app:layout_constraintLeft_toRightOf="@id/book_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/book_price"
+            android:id="@+id/book_author"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:br_text="@{item.author}"
+            android:textSize="10dp"
+            tool:text="저자" />
+
+        <TextView
+            app:layout_constraintLeft_toRightOf="@id/book_author"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/book_price"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{item.price}"
+            android:textSize="10dp"
+            tool:text="가격" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

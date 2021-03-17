@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item"
+            type="com.example.mvvmpj.repository.Item"/>
+        <variable
+            name="detailfragment"
+            type="com.example.mvvmpj.view.DetailFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/detail_book_image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:src="@drawable/base_book_image_36"
+            app:loadBigImage="@{item.image}"/>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_book_image"/>
+
+        <TextView
+            android:id="@+id/title_template"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목 : "
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/title_text"
+            app:layout_constraintLeft_toRightOf="@+id/title_template"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            app:layout_constraintBaseline_toBaselineOf="@id/title_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="20dp"
+            tool:text="어린왕자"
+            app:br_text="@{item.title}"/>
+
+        <TextView
+            android:id="@+id/author_template"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저자 : "
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/author_text"
+            app:layout_constraintLeft_toRightOf="@+id/author_template"
+            app:layout_constraintTop_toBottomOf="@id/title_text"
+            app:layout_constraintBaseline_toBaselineOf="@id/author_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tool:text="생택쥐페리"
+            android:textSize="20dp"
+            android:text="@{item.author}"/>
+
+        <TextView
+            android:id="@+id/publisher_template"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/author_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="발행처 : "
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/publisher_text"
+            app:layout_constraintLeft_toRightOf="@+id/publisher_template"
+            app:layout_constraintTop_toBottomOf="@id/author_text"
+            app:layout_constraintBaseline_toBaselineOf="@id/publisher_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tool:text="책이있는마을"
+            android:textSize="20dp"
+            android:text="@{item.publisher}"/>
+
+        <TextView
+            android:id="@+id/price_template"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/publisher_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가격 : "
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/price_text"
+            app:layout_constraintLeft_toRightOf="@+id/price_template"
+            app:layout_constraintTop_toBottomOf="@id/publisher_text"
+            app:layout_constraintBaseline_toBaselineOf="@id/price_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tool:text="12000"
+            android:textSize="20dp"
+            android:text="@{item.price}"/>
+
+        <TextView
+            android:id="@+id/description_template"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/price_template"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소개글"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/description_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_template"
+            app:layout_constraintBottom_toTopOf="@id/btn_out_link"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scrollbars="vertical"
+            android:padding="10dp"
+            tool:text="소개글"
+            android:textSize="15dp"
+            br_text="@{item.description}"/>
+
+
+        <Button
+            android:id="@+id/btn_out_link"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="바로가기"
+            android:onClick="@{() -> detailfragment.onOutLinkClick(item.link)}"/>
+
+        <FrameLayout
+            android:id="@+id/btn_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btn_out_link">
+
+            <Button
+                android:id="@+id/btn_book_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="찜하기"
+                android:onClick="@{() ->detailfragment.onBookMarkClick(item)}"/>
+
+            <Button
+                android:id="@+id/btn_delete_book_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="북마크 삭제"
+                android:onClick="@{() ->detailfragment.deleteBookMark(item.isbn)}"/>
+
+        </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.mvvmpj.view.ListFragment"
+        android:label="list"
+        tool:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="book_item"
+                app:argType="com.example.mvvmpj.repository.Item" />
+            <argument
+                android:name="check"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.mvvmpj.view.DetailFragment"
+        android:label="DetailFragment"
+        tool:layout="@layout/fragment_detail">
+        <argument
+            android:name="book_item"
+            app:argType="com.example.mvvmpj.repository.Item" />
+        <argument
+            android:name="check"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookMarkFragment"
+        android:name="com.example.mvvmpj.view.BookMarkFragment"
+        android:label="BookMarkFragment"
+        tool:layout="@layout/fragment_book_mark">
+        <action
+            android:id="@+id/action_bookMarkFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="book_item"
+                app:argType="com.example.mvvmpj.repository.Item" />
+            <argument
+                android:name="check"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+</navigation>

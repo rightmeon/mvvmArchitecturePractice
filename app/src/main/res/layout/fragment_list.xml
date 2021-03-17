@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.example.mvvmpj.view.ListFragment"/>
+        <variable
+            name="viewmodel"
+            type="com.example.mvvmpj.viewModel.BookViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+        <EditText
+            android:id="@+id/edit_writer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="search anything"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/btn_search"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            app:layout_constraintBaseline_toBaselineOf="@id/edit_writer"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1"
+            android:onClick="@{fragment::clickListener}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_writer"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:bind_booklist="@{viewmodel.data}"
+            tools:listitem="@layout/book_item"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
